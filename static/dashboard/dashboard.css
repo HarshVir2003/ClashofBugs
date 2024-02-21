@@ -1,0 +1,200 @@
+center{
+    margin-top: 20px;
+}
+
+body{
+    background: linear-gradient(#141e30, #243b55);
+}
+
+.section{
+    background:#0e1726;
+    width: 70%;
+    border: 1px solid #243b55;
+    display: none;
+    height: 75vh;
+    border-radius: 1.5em;
+    padding: 2vh;
+}
+.active-section {
+    display: block;
+}
+
+.avatar_side{
+    height: 65vh;
+    margin: 50px;
+    background:linear-gradient(#141e30, #243b55);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1.2em;
+    width: 30%;
+}
+
+.hstack{
+    display: flex;
+    flex-direction: row;
+}
+.vstack{
+display: flex;
+flex-direction: column;
+
+}
+
+.progress_side{
+    width: 60%;
+    height: 59vh;
+    background: linear-gradient(#141e30, #243b55);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    border-radius: 1.5em;
+    margin: 50px;
+    overflow: auto;
+
+}
+
+
+.avatar{
+    margin-top: 10vh;
+    height: 15vh;
+    width: 40%;
+    border-radius: 10em;
+    border: solid 5px #fff;
+
+}
+
+.avatar img{
+    border-radius: 5em;
+}
+
+h1{
+    color:#fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.courses{
+    width: 100%;
+    color: #fff;
+}
+
+.progress-loader{
+    width: 100%;
+    /* height: 10px; */
+    border-radius: 1.2em;
+    margin-left: 10px;
+    background:#fff;
+    border: #fff solid;
+}
+.course-text{
+    font-size: large;
+}
+
+.progress{
+    border-radius: 1.2em;
+    float: left;
+    height: 100%;
+    background: #243b55;
+}
+
+#avatar-selector{
+    margin-top: 10vh;
+    margin-left:17% ;
+    border-radius: 1.2em;
+    padding: 10px;
+    height: 50px;
+    width: 70%;
+    font-size: 15px;
+}
+
+
+#avatar-selector option{
+    /* margin-top: 10vh; */
+    border-radius: 1.2em;
+    height: 50px;
+    width: 70%;
+    font-size: 15px;
+}
+
+.card{
+    background: linear-gradient(#141e30, #243b55);
+    margin: 10px;
+    border-radius: 1.2em;
+    margin: 20px;
+    padding: 1.25rem;
+
+}
+.card-page{
+    overflow: auto;
+}
+.card img{
+    border-radius: 1.2em;
+    width: 10%;
+
+}
+.cert-title{
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin:30px ;
+}
+
+#user{
+color:#fff;
+margin-top:10vh;
+font-size:20px;
+
+}
+
+/* From uiverse.io by @Ali-Tahmazi99 */
+button.das {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    color:#fff;
+    background:#243b55;
+    border-radius: 10px;
+    border: 1px solid #243b55;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+   }
+
+   button.das::before,
+   button.das::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   }
+
+   button.das::before {
+    left: -10px;
+    background: #141e30 !important;
+   }
+
+   button.das::after {
+    right: -10px;
+    background: #243b55 !important;
+   }
+
+   button.das:hover::before,
+   button:hover::after {
+    width: 58%;
+   }
+
+   button.das:hover span {
+    color: #243b55;
+    transition: 0.3s;
+   }
+
+   button.das span {
+    color: #243b55;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+   }
+
+

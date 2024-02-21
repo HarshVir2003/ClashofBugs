@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User | Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard/button.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'backend/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'backend/footer.css' %}">
+    <style>
+        .progress_python{
+    width: {{python}}%;
+
+}
+        .progress_java{
+    width: {{java}}%;
+
+}.progress_cpp{
+    width: {{cpp}}%;
+
+}
+        .progress_c{
+    width: {{c}}%;
+
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo"><a href="{% url 'users:home' %}" class="home-link"><img width="100px" id = logo src="{% static 'image/sitelogo.png' %}" alt=""></a>
+    </div>
+    <ul class="nav-list">
+      <li><a href="{% url 'tournament:participate' %}"><button >Tournaments</button></a></li>
+      <li><a href="{% url 'coding:learn' %}"><button >Learn</button></a></li>
+      <li><a href="{% url 'battle:battle' %}"><button >Battles</button></a></li>
+    </ul>
+
+    <a href="{% url 'dashboard:dashboard' %}">
+        <img src="" alt="hello" class="nav-image">
+              </a>
+    <div class="menu-toggle">
+    <input id="checkbox" type="checkbox" class="menu-btn">
+    <label class="toggle" for="checkbox">
+
+      <div id="bar1" class="bars"></div>
+      <div id="bar2" class="bars"></div>
+      <div id="bar3" class="bars"></div>
+
+    </label>
+    <div class="overlay-menu">
+      <div class="profile-image">
+          <a href="{% url 'dashboard:dashboard' %}">
+        <img src="" alt="hello">
+              </a>
+      </div>
+      <div class="buttons-menu">
+        <a href="{% url 'tournament:participate' %}">
+        <button>
+          Tournaments
+        </button>
+        </a>
+        <a href="{% url 'coding:learn' %}">
+        <button>
+          Learn
+       </button>
+        </a>
+        <a href="{% url 'battle:battle' %}">
+        <button>
+          Battles
+        </button>
+        </a>
+      </div>
+  </div>
+
+    </div>
+  </nav>
+    <div class="">
+        <center>
+        <div class="buttons_dashboard">
+            <div class="">
+                <button type="button" class="dashboard-btns das" id="PI-btn" onclick="showSection('personal_info')">Personal info</button>
+                <button type="button" class="dashboard-btns das" id="Cert-btn" onclick="showSection('Certificate')">Certificates</button>
+                <!-- <button type="button" class="dashboard-btns" id="Rank-btn" onclick="showSection('Ranking')">Ranking</button> -->
+                <a href="{% url 'users:logout' %}"><button type="button" class="das" >Logout ?</button></a>
+            </div>
+        </div>
+    </center>
+    <center>
+    <div class="section" id="personal_info">
+        <div class="hstack">
+        <div class="avatar_side">
+            <span>
+            <div class="avatar">
+            <img src="{% static 'image/brownz medal.png' %}" alt="" width="100%" height="100%">
+            </div>
+        </span>
+
+            <div class="vstack">
+         <span id="user">@user</span>
+
+                </div>
+        </div>
+        <div class="progress_side">
+            <h1>Progress</h1>
+
+            <div class="courses">
+                <div class="hstack" style="margin: 10px; margin-bottom: 20px;">
+                <div class="course-text">
+                    Python
+                </div>
+                <div class="progress-loader">
+                    <div class="progress progress_python"></div>
+                </div>
+                </div>
+
+                <div class="hstack" style="margin: 10px; margin-bottom: 20px;">
+                <div class="course-text">
+                    C++
+                </div>
+                <div class="progress-loader">
+                    <div class="progress progress_cpp"></div>
+                </div>
+                </div>
+                <div class="hstack" style="margin: 10px; margin-bottom: 20px;">
+                <div class="course-text">
+                    Java
+                </div>
+                <div class="progress-loader">
+                    <div class="progress progress_java"></div>
+                </div>
+                </div>
+                <div class="hstack" style="margin: 10px; margin-bottom: 20px;">
+                <div class="course-text">
+                    C
+                </div>
+                <div class="progress-loader">
+                    <div class="progress progress_c"></div>
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </center>
+
+
+    <center>
+
+        <div class="section" id="Certificate">
+
+
+            <p style="color:#fff; font-size:40px;">Coming Soon .....</p>
+        </div>
+        </center>
+
+
+
+
+
+    </div>
+<footer class="footer" style="height:40vh;">
+        <div class="left-section">
+            <img id=logo-foot src="{% static 'image/sitelogo.png' %}" alt="">
+
+            <div>
+                <ul>
+                    <li><a href="{% url 'users:home' %}">Home</a></li>
+                    <li><a href="{% url 'tournament:participate' %}">Tournaments</a></li>
+                    <li><a href="{% url 'battle:battle' %}">Battles</a></li>
+                    <li><a href="{% url 'coding:learn' %}">Learn</a></li>
+                </ul>
+                <div class="copyright"><p> © by Trivix labs pvt ltd</p></div>
+            </div>
+        </div>
+        <div class="right-section">
+            <p>Contact Information:</p>
+            <p>Email: example@example.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+
+        </div>
+    </footer>>
+
+    <script>
+        function showSection(sectionId){
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            })
+
+
+            const sectionToshow = document.getElementById(sectionId);
+            sectionToshow.classList.add('active-section')
+
+
+
+
+        }
+        showSection('personal_info');
+    </script>
+</body>
+</html>

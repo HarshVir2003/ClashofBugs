@@ -1,0 +1,53 @@
+/* From uiverse.io by @Ali-Tahmazi99 */
+button.das {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    color:#fff;
+    background:#243b55;
+    border-radius: 10px;
+    border: 1px solid #243b55;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+   }
+
+   button.das::before,
+   button.das::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   }
+
+   button.das::before {
+    left: -10px;
+    background: #141e30 !important;
+   }
+
+   button.das::after {
+    right: -10px;
+    background: #243b55 !important;
+   }
+
+   button.das:hover::before,
+   button:hover::after {
+    width: 58%;
+   }
+
+   button.das:hover span {
+    color: #243b55;
+    transition: 0.3s;
+   }
+
+   button.das span {
+    color: #243b55;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+   }

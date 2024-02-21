@@ -1,0 +1,1912 @@
+#loader{
+  height:100%;
+  width:100%;
+  position: fixed;
+  top:0;
+  background-color: black;
+  z-index:99;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  color: white;
+  gap :10px;
+}
+#loader h3{
+  font-size: 2vw;
+}
+
+
+body {
+  font-family: 'rj', sans-serif; 
+  background-color: #000000;
+}
+
+h1, p {
+  font-family: 'rj', sans-serif; 
+}
+
+
+*{
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html, body{
+height :100%;
+width :100%;
+}
+
+.container{
+    height: 185vh;
+    width: 100%;
+    background-color: #0e1726;
+    position: relative;
+    /* display: flex;
+    justify-content: center; */
+    z-index: 1;
+}
+.d-element {
+  width: 100%;
+  height: 56%;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  z-index: 2;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+nav{
+  position:absolute;
+  display: flex;
+   align-items: center;
+  justify-content: space-between;
+   width: 100%;
+   /* background-color: red; */
+   padding: 2vw 3vw;
+   top:0;
+   left:0;
+   z-index: 3;
+}
+nav h1{
+    font-family: 'Roboto';
+}
+.logo {
+  /* background-color: aqua; */
+  width: 8vw;
+  height: 8.5vh;
+}
+.rectangle {
+  display: flex;
+}
+.rect,
+.rect1 {
+  width: 11vw;
+  height: 8vh;
+  border-radius: 15px;
+  margin-left: 5%; /* Adjust the spacing between rectangles */
+  /* background-color: #000000;  */
+}
+.rectangle button,button::after {
+  padding: 10px 35px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  border: 0.5px solid #efecec58;
+  background-color: transparent;
+  position: relative;
+}
+
+.rectangle button::after {
+  --move1: inset(50% 50% 50% 50%);
+  --move2: inset(31% 0 40% 0);
+  --move3: inset(39% 0 15% 0);
+  --move4: inset(45% 0 40% 0);
+  --move5: inset(45% 0 6% 0);
+  --move6: inset(14% 0 61% 0);
+  clip-path: var(--move1);
+  content: 'GLITCH';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+.rectangle button:hover::after {
+  animation: glitch_4011 1s;
+  text-shadow: 10 10px 10px black;
+  animation-timing-function: steps(2, end);
+  text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8;
+  background-color: transparent;
+  border: 3px solid rgb(0, 255, 213);
+}
+
+.rectangle button:hover {
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+}
+
+.rectangle button:hover {
+  background-color: transparent;
+  border: 2px solid #78c3f0;
+  box-shadow: 0px 10px 10px -10px #78c3f0;
+}
+
+@keyframes glitch_4011 {
+  0% {
+    clip-path: var(--move1);
+    transform: translate(0px,-10px);
+  }
+
+  10% {
+    clip-path: var(--move2);
+    transform: translate(-10px,10px);
+  }
+
+  20% {
+    clip-path: var(--move3);
+    transform: translate(10px,0px);
+  }
+
+  30% {
+    clip-path: var(--move4);
+    transform: translate(-10px,10px);
+  }
+
+  40% {
+    clip-path: var(--move5);
+    transform: translate(10px,-10px);
+  }
+
+  50% {
+    clip-path: var(--move6);
+    transform: translate(-10px,10px);
+  }
+
+  60% {
+    clip-path: var(--move1);
+    transform: translate(10px,-10px);
+  }
+
+  70% {
+    clip-path: var(--move3);
+    transform: translate(-10px,10px);
+  }
+
+  80% {
+    clip-path: var(--move2);
+    transform: translate(10px,-10px);
+  }
+
+  90% {
+    clip-path: var(--move4);
+    transform: translate(-10px,10px);
+  }
+
+  100% {
+    clip-path: var(--move1);
+    transform: translate(0);
+  }
+}
+
+
+
+.logo_hid{
+  height:4%;
+  width: 140px;
+  background-color: #170d0d;
+  z-index: 9999;
+  position:absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      
+        /* background-color: red; */
+        /* padding: 2vw 3vw; */
+        top:95.7vh;
+        right:1.2vw;
+        border-radius: 5px;
+       
+}
+
+#pagel-content{
+  height: 80vh;
+  width: 100%;
+  position:absolute;
+  z-index: 9;
+
+}
+
+#cob1{
+  height:15%;
+  width: 100%;
+  /* background-color: red; */
+  z-index: 9999;
+  position:absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top:73vh;
+         display:flex;
+  justify-content: center;
+}
+#cob1 h1 {
+  line-height: 2; 
+  font-size: 2em; 
+}
+
+#cob1 h1 span{
+  /* letter-spacing:6; */
+  letter-spacing: -7px;
+  font-size: 4.7em;
+  line-height: 2; /* Adjust the value as needed */
+  /* font-size: 2em; */
+  display: inline-block; 
+  /* color:whitesmoke; */
+  border-radius:10px;
+  padding:2px;
+}
+
+.space{
+  width:1vw;
+}
+#infotxt{
+  /* background-color: #3498db; */
+  height:50%;
+  width:85%;
+  margin-left:5%;
+  margin-top:7%;
+  display: flex;
+  
+}
+#infotxt h1 {
+  color: whitesmoke;
+}
+#infotxt h3 {
+  color: whitesmoke;
+
+}
+.text1{
+  margin-left: 12%;
+  margin-top: 7%;
+}
+.bug{
+  height:57vh;
+  width:100vw;
+  margin-left: 10%;
+  overflow: hidden;
+  border-radius:20px;
+  /* border: 5px linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% ); */
+  /* box-shadow: 20px 20px 60px #bebebe, */
+  /* -20px -20px 60px #ffffff; */
+  border: 5px solid;
+  border-image:  linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% ); 
+  /* border-image-slice: 1; */
+
+}
+
+
+.bug img{
+  max-width: 100%;
+  height:auto;
+  display: block;
+  margin:0 auto;
+  
+}
+
+
+
+
+.page3{
+  height: 50vh;
+  width: 100%;
+  background-color: #0e1726;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.pg3txt{
+  width: 60%;
+  text-align: center;
+}
+.pg3txt h3{
+  color: whitesmoke;
+}
+.pg3txt h1{
+  color: whitesmoke;
+}
+.page4{
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+    width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#future video{
+  opacity: 0;
+  position:absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(1.2);
+  width: 100%;
+  /* height: 100%; */
+}
+.ftext{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 9999;
+  background-color: #fff;
+  padding: 1vw 2vw;
+  border-radius: 10px;
+}
+
+.ftext button{
+  padding: 0.8vw 1.7vw;
+  font-size: .9vw;
+  font-weight: 700;
+  text-transform: capitalize;
+  border-radius: 100px;
+  background-color: #fff;
+  border:1px solid #c6c6c6;
+  color:#6f6f6f;
+  margin-top: 12px;
+}
+
+.footer {
+  height:65vh;
+  width:100%;
+  background-color: #0e1726;
+  color: #BBBBBB;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+.left-section ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.left-section ul li a:hover{
+  color: #6191C1;
+
+}
+
+.left-section ul li {
+  margin-bottom: 10px;
+}
+
+.left-section ul li a {
+  text-decoration: none;
+  color: #BBBBBB;
+}
+
+.right-section {
+  text-align: right;
+}
+
+.right-section p {
+  margin: 0;
+}
+img#logo-foot{
+  width: 25%;
+}
+.copyright{
+  font-size: 20px;
+}
+@media screen and (max-width: 1080px){
+  .left-section ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 25px;
+  }
+}
+.cob-last{
+  height:25%;
+  width:100%;
+  background-color: #f7f8fa;
+  /* background-color: #3498db; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .page2{
+  height: 70vh;
+    width: 100%;
+    background-color: #0e1726;
+    position: relative;
+    
+}
+
+  .overlap-group:hover   {
+    transform: scale(1.5);
+  }
+  
+  .dot {
+    position: absolute;
+    transform: scale(1);
+    /* aspect-ratio: 1; */
+    background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.34) 100%);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid white;
+    transition: left 1s ease-in-out, top 1s ease-in-out, transform 0.2s ease-in-out;
+      border-radius: 3px;
+    border-style: solid;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: #ffffff;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.34) 100%);
+  }
+  
+  .dot:hover {
+    transform: scale(0.5);
+  }
+  
+  .overlap-group {
+    background-image: linear-gradient(230deg, rgba(93, 93, 93, 0.03) 0%, rgba(93, 93, 93, 0.03) 50%, rgba(78, 78, 78, 0.03) 50%, rgba(78, 78, 78, 0.03) 100%), linear-gradient(107deg, rgba(55, 55, 55, 0.01) 0%, rgba(55, 55, 55, 0.01) 50%, rgba(170, 170, 170, 0.01) 50%, rgba(170, 170, 170, 0.01) 100%), linear-gradient(278deg, rgba(16, 16, 16, 0.03) 0%, rgba(16, 16, 16, 0.03) 50%, rgba(24, 24, 24, 0.03) 50%, rgba(24, 24, 24, 0.03) 100%), linear-gradient(205deg, rgba(116, 116, 116, 0.03) 0%, rgba(116, 116, 116, 0.03) 50%, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.03) 100%), linear-gradient(150deg, rgba(5, 5, 5, 0.03) 0%, rgba(5, 5, 5, 0.03) 50%, rgba(80, 80, 80, 0.03) 50%, rgba(80, 80, 80, 0.03) 100%), linear-gradient(198deg, rgba(231, 231, 231, 0.03) 0%, rgba(231, 231, 231, 0.03) 50%, rgba(26, 26, 26, 0.03) 50%, rgba(26, 26, 26, 0.03) 100%), linear-gradient(278deg, rgba(89, 89, 89, 0.03) 0%, rgba(89, 89, 89, 0.03) 50%, rgba(26, 26, 26, 0.03) 50%, rgba(26, 26, 26, 0.03) 100%), linear-gradient(217deg, rgba(28, 28, 28, 0.03) 0%, rgba(28, 28, 28, 0.03) 50%, rgba(202, 202, 202, 0.03) 50%, rgba(202, 202, 202, 0.03) 100%), linear-gradient(129deg, rgba(23, 23, 23, 0.03) 0%, rgba(23, 23, 23, 0.03) 50%, rgba(244, 244, 244, 0.03) 50%, rgba(244, 244, 244, 0.03) 100%), linear-gradient(135deg, rgb(122, 3, 57), rgb(11, 80, 143));
+    transition: left 1s ease-in-out, top 1s ease-in-out, transform 0.2s ease-in-out;
+  }
+  .frame{
+    padding-top: 2%;
+  }
+  /* .frame{
+    display: grid;
+    place-content: center;
+    border-radius: 20px;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-image: linear-gradient(230deg, rgba(93, 93, 93, 0.03) 0%, rgba(93, 93, 93, 0.03) 50%, rgba(78, 78, 78, 0.03) 50%, rgba(78, 78, 78, 0.03) 100%), linear-gradient(107deg, rgba(55, 55, 55, 0.01) 0%, rgba(55, 55, 55, 0.01) 50%, rgba(170, 170, 170, 0.01) 50%, rgba(170, 170, 170, 0.01) 100%), linear-gradient(278deg, rgba(16, 16, 16, 0.03) 0%, rgba(16, 16, 16, 0.03) 50%, rgba(24, 24, 24, 0.03) 50%, rgba(24, 24, 24, 0.03) 100%), linear-gradient(205deg, rgba(116, 116, 116, 0.03) 0%, rgba(116, 116, 116, 0.03) 50%, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.03) 100%), linear-gradient(150deg, rgba(5, 5, 5, 0.03) 0%, rgba(5, 5, 5, 0.03) 50%, rgba(80, 80, 80, 0.03) 50%, rgba(80, 80, 80, 0.03) 100%), linear-gradient(198deg, rgba(231, 231, 231, 0.03) 0%, rgba(231, 231, 231, 0.03) 50%, rgba(26, 26, 26, 0.03) 50%, rgba(26, 26, 26, 0.03) 100%), linear-gradient(278deg, rgba(89, 89, 89, 0.03) 0%, rgba(89, 89, 89, 0.03) 50%, rgba(26, 26, 26, 0.03) 50%, rgba(26, 26, 26, 0.03) 100%), linear-gradient(217deg, rgba(28, 28, 28, 0.03) 0%, rgba(28, 28, 28, 0.03) 50%, rgba(202, 202, 202, 0.03) 50%, rgba(202, 202, 202, 0.03) 100%), linear-gradient(129deg, rgba(23, 23, 23, 0.03) 0%, rgba(23, 23, 23, 0.03) 50%, rgba(244, 244, 244, 0.03) 50%, rgba(244, 244, 244, 0.03) 100%), linear-gradient(135deg, rgb(1, 132, 255), rgb(198, 5, 91));
+  } */
+  .frame .dot-2 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 30px;
+    left: 92px;
+  
+  }
+  
+  .frame .dot-3 {
+    
+    position: absolute;
+    width: 10px;
+    height: 17px;
+    top: 114px;
+    left: 171px;
+  
+  }
+  
+  .frame .dot-4 {
+    
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 126px;
+    left: 102px;
+  
+  }
+  
+  .frame .dot-5 {
+    
+    position: absolute;
+    width: 23px;
+    height: 20px;
+    top: 130px;
+    left: 447px;
+  
+  }
+  
+  .frame .dot-6 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 22px;
+    left: 539px;
+  
+  }
+  
+  .frame .dot-7 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 160px;
+    left: 408px;
+  
+  }
+  
+  .frame .dot-8 {
+    position: absolute;
+    width: 17px;
+    height: 10px;
+    top: 242px;
+    left: 428px;
+  
+  }
+  
+  .frame .dot-9 {
+    position: absolute;
+    width: 30px;
+    height: 13px;
+    top: 118px;
+    left: 325px;
+  
+  }
+  
+  .frame .dot-10 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 296px;
+    left: 411px;
+  
+  }
+  
+  .frame .dot-11 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 228px;
+    left: 1103px;
+  
+  }
+  
+  .frame .dot-12 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 204px;
+    left: 968px;
+  
+  }
+  
+  .frame .dot-13 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 84px;
+    left: 390px;
+  }
+  
+  .frame .dot-14 {
+    position: absolute;
+    width: 19px;
+    height: 32px;
+    top: 236px;
+    left: 355px;
+  
+  }
+  
+  .frame .dot-15 {
+    position: absolute;
+    width: 19px;
+    height: 23px;
+    top: 22px;
+    left: 242px;
+  
+  }
+  
+  .frame .dot-16 {
+    position: absolute;
+    width: 27px;
+    height: 10px;
+    top: 306px;
+    left: 355px;
+  
+  }
+  
+  .frame .dot-17 {
+    position: absolute;
+    width: 15px;
+    height: 29px;
+    top: 178px;
+    left: 220px;
+  
+  }
+  
+  .frame .dot-18 {
+    position: absolute;
+    width: 23px;
+    height: 18px;
+    top: 64px;
+    left: 289px;
+  
+  }
+  
+  .frame .dot-19 {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    top: 92px;
+    left: 227px;
+  
+  }
+  
+  .frame .dot-20 {
+    position: absolute;
+    width: 18px;
+    height: 29px;
+    top: 40px;
+    left: 340px;
+  
+  }
+  
+  .frame .dot-21 {
+    position: absolute;
+    width: 23px;
+    height: 29px;
+    top: 116px;
+    left: 252px;
+  
+  }
+  
+  .frame .dot-22 {
+    position: absolute;
+    width: 23px;
+    height: 10px;
+    top: 164px;
+    left: 297px;
+  
+  }
+  
+  .frame .dot-23 {
+    position: absolute;
+    width: 29px;
+    height: 11px;
+    top: 278px;
+    left: 283px;
+  
+  }
+  
+  .frame .dot-24 {
+    position: absolute;
+    width: 28px;
+    height: 17px;
+    top: 302px;
+    left: 247px;
+  
+  }
+  
+  .frame .dot-25 {
+    position: absolute;
+    width: 28px;
+    height: 10px;
+    top: 306px;
+    left: 139px;
+  
+  }
+  
+  .frame .dot-26 {
+    position: absolute;
+    width: 17px;
+    height: 10px;
+    top: 220px;
+    left: 116px;
+  
+  }
+  
+  .frame .dot-27 {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    top: 34px;
+    left: 188px;
+  
+  }
+  
+  .frame .dot-28 {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    top: 92px;
+    left: 47px;
+  
+  }
+  
+  .frame .dot-29 {
+    position: absolute;
+    width: 10px;
+    height: 32px;
+    top: 146px;
+    left: 58px;
+  
+  }
+  
+  .frame .dot-30 {
+    position: absolute;
+    width: 20px;
+    height: 23px;
+    top: 204px;
+    left: 27px;
+    
+  }
+  
+  .frame .dot-31 {
+    position: absolute;
+    width: 30px;
+    height: 45px;
+    top: 260px;
+    left: 58px;
+    
+  }
+  
+  .frame .dot-32 {
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    top: 282px;
+    left: 1148px;
+    
+  }
+  
+  .frame .dot-33 {
+    position: absolute;
+    width: 26px;
+    height: 40px;
+    top: 124px;
+    left: 995px;
+    
+  }
+  
+  .frame .dot-34 {
+    position: absolute;
+    width: 26px;
+    height: 22px;
+    top: 176px;
+    left: 1061px;
+    
+  }
+  
+  .frame .dot-35 {
+    position: absolute;
+    width: 28px;
+    height: 12px;
+    top: 278px;
+    left: 1061px;
+    
+  }
+  
+  .frame .dot-36 {
+    position: absolute;
+    width: 38px;
+    height: 20px;
+    top: 84px;
+    left: 766px;
+    
+  }
+  
+  .frame .dot-37 {
+    position: absolute;
+    width: 28px;
+    height: 20px;
+    top: 84px;
+    left: 880px;
+    
+  }
+  
+  .frame .dot-38 {
+    position: absolute;
+    width: 28px;
+    height: 12px;
+    top: 166px;
+    left: 820px;
+    
+  }
+  
+  .frame .dot-39 {
+    position: absolute;
+    width: 28px;
+    height: 12px;
+    top: 88px;
+    left: 945px;
+    
+  }
+  
+  .frame .dot-40 {
+    position: absolute;
+    width: 26px;
+    height: 20px;
+    top: 24px;
+    left: 897px;
+    
+  }
+  
+  .frame .dot-41 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 226px;
+    left: 897px;
+    
+  }
+  
+  .frame .dot-42 {
+    position: absolute;
+    width: 30px;
+    height: 54px;
+    top: 88px;
+    left: 674px;
+    
+  }
+  
+  .frame .dot-43 {
+    position: absolute;
+    width: 33px;
+    height: 25px;
+    top: 272px;
+    left: 673px;
+    
+  }
+  
+  .frame .dot-44 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 202px;
+    left: 658px;
+    
+  }
+  
+  .frame .dot-45 {
+    position: absolute;
+    width: 30px;
+    height: 47px;
+    top: 44px;
+    left: 600px;
+    
+  }
+  
+  .frame .dot-46 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 202px;
+    left: 486px;
+    
+  }
+  
+  .frame .dot-47 {
+    position: absolute;
+    width: 30px;
+    height: 33px;
+    top: 246px;
+    left: 193px;
+    
+  }
+  
+  .frame .dot-48 {
+    position: absolute;
+    width: 30px;
+    height: 24px;
+    top: 64px;
+    left: 118px;
+    
+  }
+  
+  .frame .dot-49 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 284px;
+    left: 445px;
+    
+  }
+  
+  .frame .dot-50 {
+    position: absolute;
+    width: 44px;
+    height: 22px;
+    top: 62px;
+    left: 445px;
+    
+  }
+  
+  .frame .dot-51 {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    top: 174px;
+    left: 133px;
+    
+  }
+  
+  .frame .dot-52 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 228px;
+    left: 292px;
+    
+  }
+  
+  .frame .dot-53 {
+    position: absolute;
+    width: 30px;
+    height: 46px;
+    top: 260px;
+    left: 516px;
+    
+  }
+  
+  .frame .dot-54 {
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    top: 32px;
+    left: 785px;
+    
+  }
+  
+  .frame .dot-55 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 188px;
+    left: 775px;
+    
+  }
+  
+  .frame .dot-56 {
+    position: absolute;
+    width: 28px;
+    height: 27px;
+    top: 186px;
+    left: 1229px;
+    
+  }
+  
+  .frame .dot-57 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 150px;
+    left: 888px;
+    
+  }
+  
+  .frame .dot-58 {
+    position: absolute;
+    width: 27px;
+    height: 65px;
+    top: 246px;
+    left: 836px;
+    
+  }
+  
+  .frame .dot-59 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 288px;
+    left: 927px;
+    
+  }
+  
+  .frame .dot-60 {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 268px;
+    left: 1257px;
+    
+  }
+  
+  .frame .dot-61 {
+    position: absolute;
+    width: 15px;
+    height: 16px;
+    top: 100px;
+    left: 1257px;
+    
+  }
+  
+  .frame .dot-62 {
+    position: absolute;
+    width: 15px;
+    height: 16px;
+    top: 44px;
+    left: 1222px;
+    
+  }
+  
+  .frame .dot-63 {
+    position: absolute;
+    width: 28px;
+    height: 38px;
+    top: 20px;
+    left: 1099px;
+    
+  }
+  
+  .frame .dot-64 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 84px;
+    left: 1058px;
+    
+  }
+  
+  .frame .dot-65 {
+    position: absolute;
+    width: 26px;
+    height: 18px;
+    top: 40px;
+    left: 990px;
+    
+  }
+  
+  .frame .dot-66 {
+    position: absolute;
+    width: 26px;
+    height: 18px;
+    top: 236px;
+    left: 1021px;
+    
+  }
+  
+  .frame .dot-67 {
+    position: absolute;
+    width: 15px;
+    height: 22px;
+    top: 108px;
+    left: 1163px;
+    
+  }
+  
+  .frame .dot-68 {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    top: 264px;
+    left: 980px;
+    
+  }
+  
+  .frame .dot-69 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 58px;
+    left: 843px;
+    
+  }
+  
+  .frame .dot-70 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 268px;
+    left: 780px;
+    
+  }
+  
+  .frame .dot-71 {
+    position: absolute;
+    width: 9px;
+    height: 20px;
+    top: 132px;
+    left: 762px;
+  
+  }
+  
+  .frame .dot-72 {
+    position: absolute;
+    width: 17px;
+    height: 20px;
+    top: 230px;
+    left: 741px;
+    
+  }
+  
+  .frame .dot-73 {
+    position: absolute;
+    width: 10px;
+    height: 41px;
+    top: 120px;
+    left: 620px;
+  
+  }
+  
+  .frame .dot-74 {
+    position: absolute;
+    width: 27px;
+    height: 20px;
+    top: 38px;
+    left: 695px;
+    
+  }
+  
+  .frame .dot-75 {
+    position: absolute;
+    width: 18px;
+    height: 42px;
+    top: 218px;
+    left: 580px;
+    
+  }
+  
+  .frame .dot-76 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 116px;
+    left: 540px;
+    
+  }
+  
+  .frame .dot-77 {
+    position: absolute;
+    width: 29px;
+    height: 20px;
+    top: 276px;
+    left: 610px;
+    
+  }
+  
+  .frame .dot-78 {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    top: 186px;
+    left: 353px;
+    
+  }
+  
+  .frame .dot-79 {
+    position: absolute;
+    width: 31px;
+    height: 22px;
+    top: 26px;
+    left: 393px;
+    
+  }
+  .frame .dot-1 {
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: 15px;
+     
+  }
+  .frame .dot-0 {
+    width: 10px;
+    height: 10px;
+    top: 69px;
+    left: 17px;
+     
+  }
+  
+  .frame .text-wrapper-2 {
+    position: absolute;
+    top: 288px;
+    left: 502px;
+    font-family: "Saira Stencil One-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 32px;
+    letter-spacing: 0.32px;
+    line-height: normal;
+  }
+
+   .frame{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding-top: 3%;
+  }
+  
+  .frame .overlap-group {
+    position: relative;
+    width: 86vw;
+    height: 49vh;
+    border-radius: 25px;
+    
+  }
+  .frame:hover .overlap-group{
+    transform: scale(1.08);
+  }
+
+  .frame:hover .dot-1 {
+    width: 18px;
+    height: 18px;
+    top: 103px;
+    left: 150px;
+     
+  }
+  .frame:hover .dot-0 {
+    width: 10px;
+    height: 10px;
+    top: 103px;
+    left: 174px;
+     
+  }
+  .frame:hover    .dot-2 {
+    width: 8px;
+    height: 17px;
+    top: 130px;
+    left: 213px;
+     
+  }
+  .frame:hover    .dot-3 {
+    width: 6px;
+    height: 8px;
+    top: 139px;
+    left: 167px;
+    /*   */
+  }
+  .frame:hover   .dot-4 {
+    width: 23px;
+    height: 20px;
+    top: 105px;
+    left: 469px;
+     
+  } 
+  .frame:hover   .dot-5 {
+    width: 40px;
+    height: 20px;
+    top: 105px;
+    left: 495px;
+     
+  }
+  .frame:hover   .dot-6 {
+    width: 10px;
+    height: 10px;
+    top: 152px;
+    left: 400px;
+     
+  }
+  
+  .frame:hover   .dot-7 {
+    width: 17px;
+    height: 10px;
+    top: 152px;
+    left: 413px;
+     
+  }
+  
+  .frame:hover   .dot-8 {
+    width: 30px;
+    height: 13px;
+    top: 137px;
+    left: 400px;
+     
+  }
+  
+  .frame:hover   .dot-9 {
+    width: 10px;
+    height: 10px;
+    top: 117px;
+    left: 403px;
+     
+  }
+  
+  .frame:hover   .dot-10 {
+    width: 10px;
+    height: 10px;
+    top: 170px;
+    left: 1032px;
+     
+  }
+  
+  .frame:hover   .dot-11 {
+    width: 10px;
+    height: 10px;
+    top: 143px;
+    left: 947px;
+     
+  }
+  
+  .frame:hover   .dot-12 {
+    width: 10px;
+    height: 10px;
+    top: 105px;
+    left: 403px;
+     
+  }
+  
+  .frame:hover   .dot-13 {
+    width: 19px;
+    height: 32px;
+    top: 172px;
+    left: 334px;
+     
+  }
+  
+  .frame:hover   .dot-14 {
+    width: 19px;
+    height: 23px;
+    top: 130px;
+    left: 283px;
+     
+  }
+  
+  .frame:hover   .dot-15 {
+    width: 27px;
+    height: 10px;
+    top: 207px;
+    left: 338px;
+     
+  }
+  
+  .frame:hover   .dot-16 {
+    width: 15px;
+    height: 29px;
+    top: 118px;
+    left: 225px;
+     
+  }
+  
+  .frame:hover   .dot-17 {
+    width: 23px;
+    height: 18px;
+    top: 103px;
+    left: 310px;
+     
+  }
+  
+  .frame:hover   .dot-18 {
+    width: 13px;
+    height: 16px;
+    top: 112px;
+    left: 290px;
+     
+  }
+  
+  .frame:hover   .dot-19 {
+    width: 18px;
+    height: 29px;
+    top: 127px;
+    left: 320px;
+     
+  }
+  
+  .frame:hover   .dot-20 {
+    width: 23px;
+    height: 29px;
+    top: 154px;
+    left: 275px;
+     
+  }
+  
+  .frame:hover   .dot-21 {
+    width: 23px;
+    height: 10px;
+    top: 159px;
+    left: 326px;
+     
+  }
+  
+  .frame:hover   .dot-22 {
+    width: 29px;
+    height: 11px;
+    top: 186px;
+    left: 266px;
+     
+  }
+  
+  .frame:hover   .dot-23 {
+    width: 28px;
+    height: 17px;
+    top: 200px;
+    left: 261px;
+     
+  }
+  
+  .frame:hover   .dot-24 {
+    width: 37px;
+    height: 10px;
+    top: 207px;
+    left: 186px;
+     
+  }
+  
+  .frame:hover   .dot-25 {
+    width: 20px;
+    height: 8px;
+    top: 195px;
+    left: 186px;
+     
+  }
+  
+  .frame:hover   .dot-26 {
+    width: 10px;
+    height: 30px;
+    top: 115px;
+    left: 173px;
+ }
+  
+  .frame:hover   .dot-27 {
+    width: 20px;
+    height: 10px;
+    top: 125px;
+    left: 151px;
+     
+  }
+  
+  .frame:hover   .dot-28 {
+    width: 10px;
+    height: 32px;
+    top: 137px;
+    left: 152px;
+     
+  }
+  
+  .frame:hover   .dot-29 {
+    width: 23px;
+    height: 17px;
+    top: 150px;
+    left: 166px;
+     
+  }
+  
+  .frame:hover   .dot-30 {
+    width: 30px;
+    height: 45px;
+    top: 172px;
+    left: 152px;
+     
+  }
+  
+  .frame:hover   .dot-31 {
+    width: 30px;
+    height: 25px;
+    top: 192px;
+    left: 1119px;
+     
+  }
+  
+  .frame:hover   .dot-32 {
+    width: 26px;
+    height: 40px;
+    top: 177px;
+    left: 947px;
+     
+  }
+  
+  .frame:hover   .dot-33 {
+    width: 26px;
+    height: 22px;
+    top: 160px;
+    left: 987px;
+     
+  }
+  
+  .frame:hover   .dot-34 {
+    width: 28px;
+    height: 12px;
+    top: 205px;
+    left: 1009px;
+     
+  }
+  
+  .frame:hover   .dot-35 {
+    width: 38px;
+    height: 20px;
+    top: 105px;
+    left: 714px;
+     
+  }
+  
+  .frame:hover   .dot-36 {
+    width: 28px;
+    height: 20px;
+    top: 137px;
+    left: 892px;
+     
+  }
+  
+  .frame:hover   .dot-37 {
+    width: 28px;
+    height: 12px;
+    top: 196px;
+    left: 829px;
+     
+  }
+  
+  .frame:hover   .dot-38 {
+    width: 28px;
+    height: 12px;
+    top: 147px;
+    left: 975px;
+     
+  }
+  
+  .frame:hover   .dot-39 {
+    width: 26px;
+    height: 20px;
+    top: 113px;
+    left: 890px;
+     
+  }
+  
+  .frame:hover   .dot-40 {
+    width: 30px;
+    height: 30px;
+    top: 160px;
+    left: 890px;
+     
+  }
+  
+  .frame:hover   .dot-41 {
+    width: 30px;
+    height: 54px;
+    top: 129px;
+    left: 673px;
+     
+  }
+  
+  .frame:hover   .dot-42 {
+    width: 33px;
+    height: 25px;
+    top: 193px;
+    left: 620px;
+     
+  }
+  
+  .frame:hover   .dot-43 {
+    width: 30px;
+    height: 30px;
+    top: 187px;
+    left: 673px;
+     
+  }
+  
+  .frame:hover   .dot-44 {
+    width: 30px;
+    height: 47px;
+    top: 103px;
+    left: 580px;
+     
+  }
+  
+  .frame:hover   .dot-45 {
+    width: 30px;
+    height: 30px;
+    top: 187px;
+    left: 500px;
+     
+  }
+  
+  .frame:hover   .dot-46 {
+    width: 30px;
+    height: 33px;
+    top: 172px;
+    left: 213px;
+     
+  }
+  
+  .frame:hover   .dot-47 {
+    width: 30px;
+    height: 24px;
+    top: 103px;
+    left: 193px;
+     
+  }
+  
+  .frame:hover   .dot-48 {
+    width: 30px;
+    height: 30px;
+    top: 165px;
+    left: 400px;
+     
+  }
+  
+  .frame:hover   .dot-49 {
+    width: 44px;
+    height: 22px;
+    top: 105px;
+    left: 416px;
+     
+  }
+  
+  .frame:hover   .dot-50 {
+    top: 150px;
+    left: 193px;
+    width: 30px;
+    height: 20px;
+     
+  }
+  
+  .frame:hover   .dot-51 {
+    width: 26px;
+    height: 20px;
+    top: 175px;
+    left: 304px;
+     
+  }
+  
+  .frame:hover   .dot-52 {
+    width: 30px;
+    height: 54px;
+    top: 131px;
+    left: 500px;
+     
+  }
+  
+  .frame:hover   .dot-53 {
+    width: 20px;
+    height: 16px;
+    top: 109px;
+    left: 832px;
+     
+  }
+  
+  .frame:hover   .dot-54 {
+    width: 20px;
+    height: 20px;
+    top: 196px;
+    left: 734px;
+     
+  }
+  
+  .frame:hover   .dot-55 {
+    width: 28px;
+    height: 27px;
+    top: 124px;
+    left: 1121px;
+     
+  }
+  
+  .frame:hover   .dot-56 {
+    width: 20px;
+    height: 20px;
+    top: 194px;
+    left: 890px;
+     
+  }
+  
+  .frame:hover   .dot-57 {
+    width: 27px;
+    height: 65px;
+    top: 129px;
+    left: 825px;
+     
+  }
+  
+  .frame:hover   .dot-58 {
+    width: 20px;
+    height: 20px;
+    top: 199px;
+    left: 858px;
+     
+  }
+  
+  .frame:hover   .dot-59 {
+    width: 22px;
+    height: 22px;
+    top: 153px;
+    left: 1124px;
+     
+  }
+  
+  .frame:hover   .dot-60 {
+    width: 15px;
+    height: 16px;
+    top: 105px;
+    left: 1119px;
+     
+  }
+  
+  .frame:hover   .dot-61 {
+    width: 15px;
+    height: 16px;
+    top: 105px;
+    left: 1136px;
+     
+  }
+  
+  .frame:hover   .dot-62 {
+    width: 28px;
+    height: 38px;
+    top: 105px;
+    left: 1013px;
+     
+  }
+  
+  .frame:hover   .dot-63 {
+    width: 20px;
+    height: 20px;
+    top: 123px;
+    left: 967px;
+     
+  }
+  
+  .frame:hover   .dot-64 {
+    width: 26px;
+    height: 18px;
+    top: 103px;
+    left: 953px;
+     
+  }
+  
+  .frame:hover   .dot-65 {
+    width: 26px;
+    height: 18px;
+    top: 185px;
+    left: 1000px;
+     
+  }
+  
+  .frame:hover   .dot-66 {
+    width: 15px;
+    height: 22px;
+    top: 145px;
+    left: 1026px;
+     
+  }
+  
+  .frame:hover   .dot-67 {
+    width: 15px;
+    height: 20px;
+    top: 155px;
+    left: 947px;
+     
+  }
+  
+  .frame:hover   .dot-68 {
+    width: 20px;
+    height: 20px;
+    top: 105px;
+    left: 866px;
+     
+  }
+  
+  .frame:hover   .dot-69 {
+    width: 20px;
+    height: 20px;
+    top: 150px;
+    left: 714px;
+     
+  }
+  
+  .frame:hover   .dot-70 {
+    width: 9px;
+    height: 20px;
+    top: 150px;
+    left: 736px;
+     
+  }
+  
+  .frame:hover   .dot-71 {
+    width: 17px;
+    height: 20px;
+    top: 196px;
+    left: 714px;
+     
+  }
+  
+  .frame:hover   .dot-72 {
+    width: 10px;
+    height: 41px;
+    top: 153px;
+    left: 579px;
+     
+  }
+  
+  .frame:hover   .dot-73 {
+    width: 27px;
+    height: 20px;
+    top: 105px;
+    left: 673px;
+     
+  }
+  
+  .frame:hover   .dot-74 {
+    width: 18px;
+    height: 42px;
+    top: 152px;
+    left: 591px;
+     
+  }
+  
+  .frame:hover   .dot-75 {
+    width: 20px;
+    height: 20px;
+    top: 105px;
+    left: 540px;
+     
+  }
+  
+  .frame:hover   .dot-76 {
+    width: 29px;
+    height: 20px;
+    top: 196px;
+    left: 580px;
+     
+  }
+  
+  .frame:hover   .dot-77 {
+    width: 30px;
+    height: 20px;
+    top: 196px;
+    left: 400px;
+     
+  }
+  
+  .frame:hover   .dot-78 {
+    width: 31px;
+    height: 22px;
+    top: 105px;
+    left: 369px;
+     
+  }
+  
+  .frame:hover   .text-wrapper-2 {
+    position: absolute;
+    top: 257px;
+    left: 523px;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.28) 100%);
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    font-family: "Prosto One-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 24px;
+    letter-spacing: 0.24px;
+    line-height: normal;
+  }
+  
+  
+  
+  
+
+
+
+
+
+
+
+/* 
+#trigger{
+  color: #000000;
+} */
+
+
+/* 
+
+
+  #trigger {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: #8d6478;
+    color: rgb(218, 36, 36);
+    display: none; 
+  } */
