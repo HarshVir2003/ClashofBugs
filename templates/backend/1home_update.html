@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | CLASH OF BUGS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
+    <link rel="stylesheet" href="{% static 'css/1home_update.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+
+   <style>
+    #heading-home {
+        font-family: 'Comic Sans MS', cursive;
+    }
+</style>
+
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+        integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+        integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"
+        integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<div id="loader">
+    <h3>Hello </h3>
+    <h3>Coder's<br></h3>
+
+</div>
+<div id="main">
+    <div class="container">
+
+        <div class="d-element">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.38/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/xBz2ceEWNGW3RaG7/scene.splinecode"></spline-viewer>
+
+        </div>
+        <div class="logo_hid"></div>
+        <div id="cob1">
+
+            <h1 id="heading-home">
+                <span>C</span><span>L</span><span>A</span><span>S</span><span>H</span>
+                <span class="space"></span>
+                <span>O</span><span>F</span>
+                <span class="space"></span>
+                <span>B</span><span>U</span><span>G</span><span>'S</span>
+            </h1>
+
+        </div>
+        <nav>
+            <div class="logo">
+                <img width="100%" height="120%" id=logo src="{% static 'image/sitelogo.png' %}" alt="">
+            </div>
+            <div class="rectangle">
+                {% if not request.user.is_authenticated %}
+                <div class="rect">
+                    <a href="{% url 'users:signup' %}">
+                        <button>
+                            Register
+                        </button>
+                    </a>
+                </div>
+
+                <div class="rect1">
+                    <a href="{% url 'users:login' %}">
+                        <button>
+                            Sign In
+                        </button>
+                    </a>
+                </div>
+                {% else %}
+                <div class="rect">
+                    <a href="{% url 'coding:learn' %}">
+                        <button>
+                            Learn
+                        </button>
+                    </a>
+                </div>
+
+                <div class="rect1">
+                    <a href="{% url 'battle:battle' %}">
+                        <button>
+                            Battle
+                        </button>
+                    </a>
+                </div>
+                 <div class="rect1">
+                    <a href="{% url 'tournament:participate' %}">
+                        <button>
+                            Tournament
+                        </button>
+                    </a>
+                </div>
+                <div class="rect1">
+                    <a href="{% url 'dashboard:dashboard' %}">
+                        <button>
+                            Dashboard
+                        </button>
+                    </a>
+                </div>
+                {% endif %}
+
+            </div>
+        </nav>
+        <div id="page1-content">
+
+
+            <div id="infotxt">
+                <div class="bug">
+                    <div class="card">
+                        <img src="{% static 'image/bug_img.jpg' %}" alt="img">
+                    </div>
+                </div>
+                <div class="text1">
+                    <h1>Loe totam accusamus dolore natus modi a ipsum, voluptates impedit.</h1><br>
+                    <h3>Lorem adipisicing elit. Incidunt blanditiis consequatur nulla veritatis autem animi deserunt
+                        mollitia quia dolores quibusdam similique eveniet porro, officiis, nesciunt distinctio nam
+                        quidem aliquid velit?</h3>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="page2">
+        <div class="frame">
+            <div class="overlap-group">
+                <div class="dot  dot-0"></div>
+                <div class="dot  dot-1"></div>
+                <div class="dot  dot-2"></div>
+                <div class="dot  dot-3"></div>
+                <div class="dot  dot-4"></div>
+                <div class="dot  dot-5"></div>
+                <div class="dot  dot-6"></div>
+                <div class="dot  dot-7"></div>
+                <div class="dot  dot-8"></div>
+                <div class="dot  dot-9"></div>
+                <div class="dot  dot-10"></div>
+                <div class="dot  dot-11"></div>
+                <div class="dot  dot-12"></div>
+                <div class="dot  dot-13"></div>
+                <div class="dot  dot-14"></div>
+                <div class="dot  dot-15"></div>
+                <div class="dot  dot-16"></div>
+                <div class="dot  dot-17"></div>
+                <div class="dot  dot-18"></div>
+                <div class="dot  dot-19"></div>
+                <div class="dot  dot-20"></div>
+                <div class="dot  dot-21"></div>
+                <div class="dot  dot-22"></div>
+                <div class="dot  dot-23"></div>
+                <div class="dot  dot-24"></div>
+                <div class="dot  dot-25"></div>
+                <div class="dot  dot-26"></div>
+                <div class="dot  dot-27"></div>
+                <div class="dot  dot-28"></div>
+                <div class="dot  dot-29"></div>
+                <div class="dot  dot-30"></div>
+                <div class="dot  dot-31"></div>
+                <div class="dot  dot-32"></div>
+                <div class="dot  dot-33"></div>
+                <div class="dot  dot-34"></div>
+                <div class="dot  dot-35"></div>
+                <div class="dot  dot-36"></div>
+                <div class="dot  dot-37"></div>
+                <div class="dot  dot-38"></div>
+                <div class="dot  dot-39"></div>
+                <div class="dot  dot-40"></div>
+                <div class="dot  dot-41"></div>
+                <div class="dot  dot-42"></div>
+                <div class="dot  dot-43"></div>
+                <div class="dot  dot-44"></div>
+                <div class="dot  dot-45"></div>
+                <div class="dot  dot-46"></div>
+                <div class="dot  dot-47"></div>
+                <div class="dot  dot-48"></div>
+                <div class="dot  dot-49"></div>
+                <div class="dot  dot-50"></div>
+                <div class="dot  dot-51"></div>
+                <div class="dot  dot-52"></div>
+                <div class="dot  dot-53"></div>
+                <div class="dot  dot-54"></div>
+                <div class="dot  dot-55"></div>
+                <div class="dot  dot-56"></div>
+                <div class="dot  dot-57"></div>
+                <div class="dot  dot-58"></div>
+                <div class="dot  dot-59"></div>
+                <div class="dot  dot-60"></div>
+                <div class="dot  dot-61"></div>
+                <div class="dot  dot-62"></div>
+                <div class="dot  dot-63"></div>
+                <div class="dot  dot-64"></div>
+                <div class="dot  dot-65"></div>
+                <div class="dot  dot-66"></div>
+                <div class="dot  dot-67"></div>
+                <div class="dot  dot-68"></div>
+                <div class="dot  dot-69"></div>
+                <div class="dot  dot-70"></div>
+                <div class="dot  dot-71"></div>
+                <div class="dot  dot-72"></div>
+                <div class="dot  dot-73"></div>
+                <div class="dot  dot-74"></div>
+                <div class="dot  dot-75"></div>
+                <div class="dot  dot-76"></div>
+                <div class="dot  dot-77"></div>
+                <div class="dot  dot-78"></div>
+                <div class="text-wrapper-2">CLASH OF BUG’S</div>
+            </div>
+        </div>
+    </div>
+    <div class="page3">
+        <div class="pg3txt">
+            <h3>Coding & Challenges</h3><br>
+            <h1>Lorem quatur nulla veri deserunt mollusdam similique eveniet porro, officiis, nesciunt distinctio nam
+                quidem aliquid velit?</h1>
+        </div>
+    </div>
+    <div class="page4" id="future">
+        <video id="ad" src="{% static 'image/vecteezy_matrix-data-vortex_5250811.mp4'  %}" autoplay muted loop></video>
+        <div class="ftext">
+            <h1>think of future</h1>
+            <button>join us</button>
+        </div>
+    </div>
+
+    <footer class="footer" style="height:40vh;">
+        <div class="left-section">
+            <img id=logo-foot src="{% static 'image/sitelogo.png' %}" alt="">
+
+            <div>
+                <ul>
+                    <li><a href="{% url 'users:home' %}">Home</a></li>
+                    <li><a href="{% url 'tournament:participate' %}">Tournaments</a></li>
+                    <li><a href="{% url 'battle:battle' %}">Battles</a></li>
+                    <li><a href="{% url 'coding:learn' %}">Learn</a></li>
+                </ul>
+                <div class="copyright"><p> © by Trivix labs pvt ltd</p></div>
+            </div>
+        </div>
+        <div class="right-section">
+            <p>Contact Information:</p>
+            <p>Email: example@example.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+
+        </div>
+    </footer>
+    <div class="cob-last">
+        <div class="cob-txt">
+            <h1>
+
+                <span>C</span><span>L</span><span>A</span><span>S</span><span>H</span>
+                <span class="space"></span>
+                <span>O</span><span>F</span>
+                <span class="space"></span>
+                <span>B</span><span>U</span><span>G</span><span>'S</span>
+            </h1>
+        </div>
+    </div>
+
+    <script src="{% static 'js/1home_update.js' %}"></script>
+</body>
+</html>
+
+

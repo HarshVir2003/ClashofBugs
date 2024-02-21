@@ -1,0 +1,87 @@
+{% extends "backend/base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block styles %}
+{% endblock %}
+{% block content %}
+<nav class="navbar">
+    <div class="logo"><img width="100px" id = logo src= "{% static '/logo.png' %}" alt="">
+    </div>
+    <ul class="nav-list">
+<!--      <li><a href="./tournaments.html"><button>Tournaments</button></a></li>-->
+<!--      <li><a href=""><button href="#">Learn</button></a></li>-->
+      <li><a href="/battle"><button>Battles</button></a></li>
+    </ul>
+    {% if not request.user.is_authenticated %}
+    <div class="login-btns-nav">
+      <a href="{% url 'users:login' %}" class="login-btn-glow">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Login
+      </a>
+      <a href="#" class="login-btn-glow">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Sign up
+      </a>
+    </div>
+    {% else %}
+    <div></div>
+    {% endif %}
+    <div class="menu-toggle">
+    <input id="checkbox" type="checkbox" class="menu-btn">
+    <label class="toggle" for="checkbox">
+
+      <div id="bar1" class="bars"></div>
+      <div id="bar2" class="bars"></div>
+      <div id="bar3" class="bars"></div>
+
+    </label>
+    <div class="overlay-menu">
+        {% if not request.user.is_authenticated %}
+        <div class="login-btns-menu">
+          <a href="#" class="login-btn-glow">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Login
+          </a>
+          <a href="#" class="login-btn-glow">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Sign up
+          </a>
+        </div>
+    {% endif %}
+      <div class="buttons-menu">
+<!--        <a href="">-->
+<!--        <button>-->
+<!--          Tournaments-->
+<!--        </button>-->
+<!--        </a>-->
+<!--        <a href="">-->
+<!--        <button>-->
+<!--          Learn-->
+<!--        </button>-->
+<!--        </a>-->
+        <a href="/battle">
+        <button>
+          Battles
+        </button>
+        </a>
+      </div>
+  </div>
+
+    </div>
+  </nav>
+
+  <script src="{% static '/navbar.js' %}"></script>
+{% endblock %}

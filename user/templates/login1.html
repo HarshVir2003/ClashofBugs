@@ -1,0 +1,13 @@
+<!-- login1.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h2>Login</h2>
+<form method="post" action="{% url 'users:login' %}">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Login</button>
+</form>
+{% endblock %}

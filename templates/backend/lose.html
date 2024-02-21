@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win Page</title>
+    <style>
+
+        body {
+            display: flex;
+             background: linear-gradient(to bottom, #141e30, #243b55);
+            flex-direction: column;
+
+            height: 100vh;
+            width:100%;
+            margin: 0;
+        }
+
+        #win-text {
+            color: red; /* Set the text color to green */
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #win-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'dashboard/button.css' %}">
+    <link rel="stylesheet" href="{% static 'backend/navbar.css' %}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo"><a href="{% url 'users:home' %}" class="home-link"><img width="100px" id = logo src="{% static 'image/sitelogo.png' %}" alt=""></a>
+    </div>
+    <ul class="nav-list">
+      <li><a href="{% url 'tournament:participate' %}"><button >Tournaments</button></a></li>
+      <li><a href="{% url 'coding:learn' %}"><button >Learn</button></a></li>
+      <li><a href="{% url 'battle:battle' %}"><button >Battles</button></a></li>
+    </ul>
+
+    <a href="{% url 'dashboard:dashboard' %}">
+        <img src="" alt="hello" class="nav-image">
+              </a>
+    <div class="menu-toggle">
+    <input id="checkbox" type="checkbox" class="menu-btn">
+    <label class="toggle" for="checkbox">
+
+      <div id="bar1" class="bars"></div>
+      <div id="bar2" class="bars"></div>
+      <div id="bar3" class="bars"></div>
+
+    </label>
+    <div class="overlay-menu">
+      <div class="profile-image">
+          <a href="{% url 'dashboard:dashboard' %}">
+        <img src="" alt="hello">
+              </a>
+      </div>
+      <div class="buttons-menu">
+        <a href="{% url 'tournament:participate' %}">
+        <button>
+          Tournaments
+        </button>
+        </a>
+        <a href="{% url 'coding:learn' %}">
+        <button>
+          Learn
+       </button>
+        </a>
+        <a href="{% url 'battle:battle' %}">
+        <button>
+          Battles
+        </button>
+        </a>
+      </div>
+  </div>
+
+    </div>
+  </nav>
+<div style="margin-left:45%; margin-top:20%;">
+    <div id="win-text" style="margin-left:25px;">Lost</div>
+    <a href="{% url 'battle:battle' %}" >
+    <button id="win-button" class="das">Battle again</button>
+        </a>
+    </div>
+</body>
+</html>

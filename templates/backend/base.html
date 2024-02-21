@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'backend/base.css' %}">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+
+
+    {% block styles %} {% endblock %}
+</head>
+<body>
+{% block content %}
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="{% url 'users:home' %}">
+            <img src="{% static 'image/sitelogo.png' %}" alt="logo"
+                        width="130px">
+        </a> <!-- Your Logo -->
+    </div>
+    <ul class="nav">
+        <li class="nav-items"><a href=""><span class="link-text">Tournament</span><i class="fa-solid fa-store"></i></a></li>
+        <li class="nav-items"><a href=""><span class="link-text">Learn</span><i class="fa-solid fa-book"></i></a>
+        </li>
+        <li class="nav-items"><a href=""><span class="link-text">Battle</span><i
+                class="fa-solid fa-weapon"></i></a></li>
+    </ul>
+    <div class="box" style="display:flex; flex-direction:rows;">
+
+<!--    <a href="{% url 'users:login' %}" class="btn" style="margin-right:10px">Login <i class="fa-solid fa-chevron-right ok"></i></a>-->
+<!--     <a href="{% url 'users:signup' %}" class="btn">Sign up <i class="fa-solid fa-chevron-right ok"></i></a>-->
+<!---->
+    </div>
+</nav>
+
+hello
+
+{% endblock %}
+</body>
+</html>
