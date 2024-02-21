@@ -7,7 +7,7 @@ python manage.py collectstatic --no-input
 python manage.py makemigrations
 python manage.py migrate
 
-sudo apt install -y docker-ce docker-ce-cli containerd.io
+apt install -y docker-ce docker-ce-cli containerd.io
 docker pull redis
 docker run --rm -p 6379:6379 redis:7
 
