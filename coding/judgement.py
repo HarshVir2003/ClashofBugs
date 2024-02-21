@@ -81,7 +81,7 @@ def get_status(token):
 # print(get_status(token))
 # get_submission(submission()['token'])
 
-a = submission("print('jass')", "python", languages, 0, 0)
-time.sleep(1)
-print(a)
-print(get_status(a.get("token")))
+# a = submission("print('jass')", "python", languages, 0, 0)
+# time.sleep(1)
+# print(a)
+# print(get_status(a.get("token")))
