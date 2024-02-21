@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coding</title>
+    <link rel="stylesheet" href="{% static 'battle/battle.css' %}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .section{display: none}
+        .active-section{display:block}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.min.css" integrity="sha512-XjO5XYWl8u7tYF3CItEHgoWh8rtQmDeSzPJq4+4PIrbak7TiqeKbWv/4ZwHZ1HAf5dIWHXoguA/jobn2psKZ7w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+
+
+  <script>var require = { paths: { 'vs' : 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs' }};
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/loader.min.js" integrity="sha512-gWqaPfGsZiCkYB6e5mNN4SMRpEvLGItLBqgOAoyLSKtDxWS2O1YPcOeGTy8d8l00gqc8rVue9ae/ncZqhmfj4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.nls.min.js" integrity="sha512-4XY3/LL6Plkq2tXMnatY+se07ZhwFMkZehD5Z68HrKoSL3BTyLDjwFomhUWixKu8VUw6jWe/8RXT1WtH95lLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.min.js" integrity="sha512-CK3czr9gLG2z/ygdSM+gNenkN9AShfpW4gMjVyY06VgFHLoc4OCoO92Z8UkcBwVX0ufoYbJw3IVs1mHfXQeI3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script>
+      var codeContent = $.trim($('#CodeBlock').text());
+      $('#CodeBlock').html('');
+
+        var editorCodeBlock = monaco.editor.create(document.getElementById('CodeBlock'),{
+              value: codeContent,
+              language : "csharp",
+              theme: "vs-dark",
+              lineNumbers: "on" ,
+              glyphMargin: false,
+              vertical: 'auto',
+              horizontal: 'auto ' ,
+              verticalScrollbarSize: 10,
+              horizontalScrollbarSize: 10,
+              scrollBeyondLastLine: false,
+              readOnly: false,
+              automaticLayout:  true,
+              minimap: {
+                  enabled: true
+              },
+              lineHeight:20,
+          });
+          $ ("#CodeBlock").height((editorCodeBlock.getModel() .getLineCount()*40.2)+30);
+
+          function showContainer(containerId) {
+    var containers = document.getElementsByClassName('container');
+
+    // Hide all containers
+    for (var i = 0; i < containers.length; i++) {
+        containers[i].style.display = 'none';
+    }
+
+    // Show the selected container
+    var selectedContainer = document.getElementById(containerId);
+    if (selectedContainer) {
+        selectedContainer.style.display = 'block';
+    }
+}
+
+function showContainer1(containerId) {
+    var containers1 = document.getElementsByClassName('test-case');
+
+    // Hide all containers
+    for (var i = 0; i < containers1.length; i++) {
+        containers1[i].style.display = 'none';
+    }
+
+    // Show the selected container
+    var selectedContainer1 = document.getElementById(containerId);
+    if (selectedContainer1) {
+        selectedContainer1.style.display = 'block';
+    }
+}
+
+  </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script> -->
+    <div class="desktop">
+
+        <div class="question">
+            <div class="heading"> {{question.title}} </div>
+            <h2>Problem</h2>
+            <div class="ques"> {{ question.primary_text }} </div>
+            <h2>Input</h2>
+            <div class="ques"> {{question.input_text}}
+                <pre class="err">
+                    <span></span>
+                   {% for i in input_q %}
+                    <span>{{ i }}</span>
+                    {% endfor %}
+                </pre>
+            </div>
+            <h2>Output</h2>
+            <div class="ques"> {{ question.output_text }}
+                <pre class="err">
+                    <span></span>
+                    {% for i in output_q %}
+                    <span>{{ i }}</span>
+                    {% endfor %}
+                </pre>
+            </div>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+        <div class="coding">
+            <div class="language">
+                Select Language
+
+            <select id="codingLanguages" name="lang">
+                <option value="C++">C++</option>
+                <option value="C">C</option>
+                <option value="python" selected>Python</option>
+                <option value="java">Java</option>
+
+            </select>
+        </div>
+
+            <div id="editor">
+
+                <pre id='CodeBlock'>
+                {% if pre %}
+                    {{pre.solution}}
+
+<!--#write the input fields-->
+
+<!--#input field should be according to the stdin-->
+
+<!--#print output as stdout-->
+<!--"""-->
+<!--def name == "main":-->
+<!-- continue-->
+<!--"""-->  {% else %}
+                    #write your code here
+            {% endif %}
+
+              </pre>
+              </div>
+
+
+
+
+        </div>
+        <div class="test">
+            <div class="radio-inputs">
+                <label class="radio">
+                    <!-- <input type="radio" name="radio" checked="checked" onclick="showContainer('container1')"> -->
+                  <span class="name">Test Cases</span>
+                </label>
+                <!-- <label class="radio">
+                    <input type="radio" name="radio" onclick="showContainer('container2')">
+                  <span class="name">Custom Inputs</span>
+                </label> -->
+
+              </div>
+              <div id="container1" class="container">
+                <!-- Content for Container 1 -->
+
+<div class="input" id="testcases">
+    {% for i in result %}
+        <button class="value" onclick="showSection('test{{ forloop.counter }}')" type="button">
+            TEST CASE {{ forloop.counter }}
+        </button>
+    {% endfor %}
+</div>
+
+{% for x, y, z  in result %}
+    <div id="test{{ forloop.counter }}" style="background: blue; overflow:auto;" class="test-case">
+        <div class="text_test_cases">
+            Time taken:
+        </div>
+        <div class="err" id="output_box">
+            <span id="compilermessage">
+                {{ z }}s
+            </span>
+        </div>
+        <div class="text_test_cases">
+            STDIN:
+        </div>
+        <div class="err" id="output_box2">
+            <span id="stdin">
+                {{ y }}
+            </span>
+        </div>
+        <div class="text_test_cases">
+            STDOUT:
+        </div>
+        <div class="err" id="output_box3">
+            <span id="stdout">
+                {{x}}
+            </span>
+        </div>
+    </div>
+{% endfor %}
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.test-case');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        })
+
+        const sectionToShow = document.getElementById(sectionId);
+
+        if (sectionToShow) {
+            sectionToShow.style.display = 'block';
+        } else {
+            console.log('Section not found!');
+        }
+    }
+</script>
+
+
+
+            </div>
+            <input type="hidden" value="hi" name="code" id="hiddenInput">
+             <button id="submit" type="submit" > Submit
+              </button>
+              </div>
+            </form>
+
+
+
+            <!-- <div id="container2" class="container" >
+                 Content for Container 2
+
+                <div class="custom-input-container">
+                    <textarea name="" id="custom-input" cols="30" rows="6" placeholder="Custom input"></textarea>
+            </div>
+            </div> -->
+
+
+        <!-- <div class="clash"></div> -->
+  <script>
+    var editorCodeBlock; // Declare the editorCodeBlock variable in a wider scope
+
+    // Ensure the document is fully loaded before initializing the editor
+    document.addEventListener("DOMContentLoaded", function () {
+        var codeContent = $.trim($('#CodeBlock').text());
+        $('#CodeBlock').html('');
+
+        editorCodeBlock = monaco.editor.create(document.getElementById('CodeBlock'), {
+            value: codeContent,
+            language: "python",
+            theme: "vs-dark",
+            lineNumbers: "on",
+            glyphMargin: false,
+            vertical: 'auto',
+            horizontal: 'auto ',
+            verticalScrollbarSize: 10,
+            horizontalScrollbarSize: 10,
+            scrollBeyondLastLine: false,
+            readOnly: false,
+            automaticLayout: true,
+            minimap: {
+                enabled: true
+            },
+            lineHeight: 20,
+        });
+
+        $("#CodeBlock").height((1 * 450.2) + 30);
+
+         editorCodeBlock.onDidChangeModelContent(function () {
+            updateHiddenInput();
+        });
+        document.getElementById('codingLanguages').addEventListener('change', function () {
+            updateEditorLanguage();
+        });
+    });
+
+    function showContainer(containerId) {
+        var containers = document.getElementsByClassName('container');
+
+        // Hide all containers
+        for (var i = 0; i < containers.length; i++) {
+            containers[i].style.display = 'none';
+        }
+
+        // Show the selected container
+        var selectedContainer = document.getElementById(containerId);
+        if (selectedContainer) {
+            selectedContainer.style.display = 'block';
+        }
+    }
+
+    function showContainer1(containerId) {
+        var containers1 = document.getElementsByClassName('test-case');
+
+        // Hide all containers
+        for (var i = 0; i < containers1.length; i++) {
+            containers1[i].style.display = 'none';
+        }
+
+        // Show the selected container
+        var selectedContainer1 = document.getElementById(containerId);
+        if (selectedContainer1) {
+            selectedContainer1.style.display = 'block';
+        }
+    }
+
+    // Function to update editor language based on the selected option
+    function updateEditorLanguage() {
+        var selectedLanguage = document.getElementById('codingLanguages').value;
+
+        // Map the selected language to the corresponding Monaco language identifier
+        var languageMap = {
+            'cpp': 'cpp',
+            'c': 'c',
+            'python': 'python',
+            'java': 'java'
+        };
+
+        // Get the Monaco language identifier based on the selected option
+        var monacoLanguage = languageMap[selectedLanguage] || 'csharp';
+
+        // Set the language of the editor
+        monaco.editor.setModelLanguage(editorCodeBlock.getModel(), monacoLanguage);
+    }
+
+        function updateHiddenInput() {
+        var codeContent = editorCodeBlock.getValue();
+        document.getElementById('hiddenInput').value = codeContent;
+    }
+</script>
+         {{ room_name|json_script:"room-name" }}
+    <script>
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/battle/'
+            + roomName
+            + '/'
+        );
+        console.log(chatSocket);
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value += (data.message + '\n');
+        };
+
+        chatSocket.onclose = function(event) {
+    console.error(`Chat socket closed unexpectedly. Code: ${event.code}, Reason: ${event.reason}`);
+};
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.key === 'Enter') {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
+</body>
+</html>
+
+
+

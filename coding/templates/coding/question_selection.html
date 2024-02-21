@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'backend/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'backend/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'backend/question-selection.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo"><a href="{% url 'users:home' %}" class="home-link"><img width="100px" id = logo src="{% static 'image/sitelogo.png' %}" alt=""></a>
+    </div>
+    <ul class="nav-list">
+      <li><a href="{% url 'tournament:participate' %}"><button >Tournaments</button></a></li>
+      <li><a href="{% url 'coding:learn' %}"><button >Learn</button></a></li>
+      <li><a href="{% url 'battle:battle' %}"><button >Battles</button></a></li>
+    </ul>
+
+    <a href="{% url 'dashboard:dashboard' %}">
+        <img src="" alt="hello" class="nav-image">
+              </a>
+    <div class="menu-toggle">
+    <input id="checkbox" type="checkbox" class="menu-btn">
+    <label class="toggle" for="checkbox">
+
+      <div id="bar1" class="bars"></div>
+      <div id="bar2" class="bars"></div>
+      <div id="bar3" class="bars"></div>
+
+    </label>
+    <div class="overlay-menu">
+      <div class="profile-image">
+          <a href="{% url 'dashboard:dashboard' %}">
+        <img src="" alt="hello">
+              </a>
+      </div>
+      <div class="buttons-menu">
+        <a href="{% url 'tournament:participate' %}">
+        <button>
+          Tournaments
+        </button>
+        </a>
+        <a href="{% url 'coding:learn' %}">
+        <button>
+          Learn
+       </button>
+        </a>
+        <a href="{% url 'battle:battle' %}">
+        <button>
+          Battles
+        </button>
+        </a>
+      </div>
+  </div>
+
+    </div>
+  </nav>
+<div class="section" id="Problems">
+    <div class="container">
+        <div class="text-dash">
+            Problems
+        </div>
+        <div class="line-dash"></div>
+    </div>
+</div>
+
+<div class="question-selection">
+    <div class="selection-left">
+        {% for question, level_value in python %}
+        <div class="question-card">
+            <div class="question-left">
+                <div class="Title-question" style="margin-bottom:10px;">
+                    {{ question.title }}
+                </div>
+                <div class="question-level {{ level_value }}">
+                    {{ level_value }}
+                </div>
+            </div>
+            <div class="question-right">
+    <form  method="post" id="{{ question.id }}">
+        {% csrf_token %}
+        <button class="solve" value="{{ question.id }}" name="questionbtn" type="submit">
+
+            Solve
+        </button>
+    </form>
+
+</div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="selection-right">
+        <h2>Filter</h2>
+
+        <p style="color:#fff;">Coming soon ....</p>
+
+    </div>
+</div>
+<footer class="footer" style="height:40vh;">
+        <div class="left-section">
+            <img id=logo-foot src="{% static 'image/sitelogo.png' %}" alt="">
+
+            <div>
+                <ul>
+                    <li><a href="{% url 'users:home' %}">Home</a></li>
+                    <li><a href="{% url 'tournament:participate' %}">Tournaments</a></li>
+                    <li><a href="{% url 'battle:battle' %}">Battles</a></li>
+                    <li><a href="{% url 'coding:learn' %}">Learn</a></li>
+                </ul>
+                <div class="copyright"><p> © by Trivix labs pvt ltd</p></div>
+            </div>
+        </div>
+        <div class="right-section">
+            <p>Contact Information:</p>
+            <p>Email: example@example.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+
+        </div>
+    </footer>>
+<script src="navbar.js"></script>
+{% load static %}
+</body>
+</html>

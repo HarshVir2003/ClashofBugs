@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'backend/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'backend/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'backend/selection.css' %}">
+        <style>
+        .progress_python{
+    width: {{python}}%;
+
+}
+        .progress_java{
+    width: {{java}}%;
+
+}.progress_cpp{
+    width: {{cpp}}%;
+
+}
+        .progress_c{
+    width: {{c}}%;
+
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar" style="margin-top:20px">
+    <div class="logo"><a href="{% url 'users:home' %}" class="home-link"><img width="100px" id = logo src="{% static 'image/sitelogo.png' %}" alt=""></a>
+    </div>
+    <ul class="nav-list">
+      <li><a href="{% url 'tournament:participate' %}"><button >Tournaments</button></a></li>
+      <li><a href="{% url 'coding:learn' %}"><button >Learn</button></a></li>
+      <li><a href="{% url 'battle:battle' %}"><button >Battles</button></a></li>
+    </ul>
+
+    <a href="{% url 'dashboard:dashboard' %}">
+        <img src="" alt="hello" class="nav-image">
+              </a>
+    <div class="menu-toggle">
+    <input id="checkbox" type="checkbox" class="menu-btn">
+    <label class="toggle" for="checkbox">
+
+      <div id="bar1" class="bars"></div>
+      <div id="bar2" class="bars"></div>
+      <div id="bar3" class="bars"></div>
+
+    </label>
+    <div class="overlay-menu">
+      <div class="profile-image">
+          <a href="{% url 'dashboard:dashboard' %}">
+        <img src="" alt="hello">
+              </a>
+      </div>
+      <div class="buttons-menu">
+        <a href="{% url 'tournament:participate' %}">
+        <button>
+          Tournaments
+        </button>
+        </a>
+        <a href="{% url 'coding:learn' %}">
+        <button>
+          Learn
+       </button>
+        </a>
+        <a href="{% url 'battle:battle' %}">
+        <button>
+          Battles
+        </button>
+        </a>
+      </div>
+  </div>
+
+    </div>
+  </nav>
+
+      <div class="the-selection">
+    <div class="section" >
+        <div class="container">
+            <div class="text-dash">
+                In-Progress
+            </div>
+            <div class="line-dash"></div>
+        </div>
+        <div class="in-progress">
+            <div class="progress-card">
+                <div class="name-of-topic">
+                    Python
+                </div>
+                <div class="progress-loader">
+                    <div class="progress progress_python"></div>
+                </div>
+                <div class="percentage">
+                    {{python}}% left
+                </div>
+                <a href="{% url 'coding:question_python' %}" class="progress-button">
+                    <button class="progress-btn" id="python-button" onclick="sendToken()">
+                        Continue
+                    </button>
+                </a>
+            </div>
+
+
+            <div class="progress-card">
+                <div class="name-of-topic">
+                    C++
+                </div>
+                <div class="progress-loader">
+                    <div class="progress progress_cpp"></div>
+                </div>
+                <div class="percentage">
+                    {{cpp}} % left
+                </div>
+                <a href="{% url 'coding:question_cpp' %}" class="progress-button">
+                    <button class="progress-btn">
+                        Continue
+                    </button>
+                </a>
+            </div>
+            <div class="progress-card">
+                <div class="name-of-topic">
+                    Java
+                </div>
+                <div class="progress-loader">
+                    <div class="progress progress_java"></div>
+                </div>
+                <div class="percentage">
+                    {{java}} % left
+                </div>
+                <a href="{% url 'coding:question_java' %}" class="progress-button">
+                    <button class="progress-btn">
+                        Continue
+                    </button>
+                </a>
+            </div>
+            <div class="progress-card">
+                <div class="name-of-topic">
+                    C
+                </div>
+                <div class="progress-loader">
+                    <div class="progress_c progress"></div>
+                </div>
+                <div class="percentage">
+                    {{c}} % left
+                </div>
+                <a href="{% url 'coding:question_c' %}" class="progress-button">
+                    <button class="progress-btn">
+                        Continue
+                    </button>
+                </a>
+            </div>
+
+                             <!-- next-row -->
+        </div>
+
+
+        </div>
+      </div>
+
+
+<footer class="footer" style="height:40vh;">
+        <div class="left-section">
+            <img id=logo-foot src="{% static 'image/sitelogo.png' %}" alt="">
+
+            <div>
+                <ul>
+                    <li><a href="{% url 'users:home' %}">Home</a></li>
+                    <li><a href="{% url 'tournament:participate' %}">Tournaments</a></li>
+                    <li><a href="{% url 'battle:battle' %}">Battles</a></li>
+                    <li><a href="{% url 'coding:learn' %}">Learn</a></li>
+                </ul>
+                <div class="copyright"><p> © by Trivix labs pvt ltd</p></div>
+            </div>
+        </div>
+        <div class="right-section">
+            <p>Contact Information:</p>
+            <p>Email: example@example.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+
+        </div>
+    </footer>>
+</body>
+
+
+</html>

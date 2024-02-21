@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coding</title>
+    <link rel="stylesheet" href="{% static 'battle/battle.css' %}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.min.css" integrity="sha512-XjO5XYWl8u7tYF3CItEHgoWh8rtQmDeSzPJq4+4PIrbak7TiqeKbWv/4ZwHZ1HAf5dIWHXoguA/jobn2psKZ7w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+
+
+  <script>var require = { paths: { 'vs' : 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs' }};
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/loader.min.js" integrity="sha512-gWqaPfGsZiCkYB6e5mNN4SMRpEvLGItLBqgOAoyLSKtDxWS2O1YPcOeGTy8d8l00gqc8rVue9ae/ncZqhmfj4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.nls.min.js" integrity="sha512-4XY3/LL6Plkq2tXMnatY+se07ZhwFMkZehD5Z68HrKoSL3BTyLDjwFomhUWixKu8VUw6jWe/8RXT1WtH95lLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.min.js" integrity="sha512-CK3czr9gLG2z/ygdSM+gNenkN9AShfpW4gMjVyY06VgFHLoc4OCoO92Z8UkcBwVX0ufoYbJw3IVs1mHfXQeI3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script>
+      var codeContent = $.trim($('#CodeBlock').text());
+      $('#CodeBlock').html('');
+
+        var editorCodeBlock = monaco.editor.create(document.getElementById('CodeBlock'),{
+              value: codeContent,
+              language : "csharp",
+              theme: "vs-dark",
+              lineNumbers: "on" ,
+              glyphMargin: false,
+              vertical: 'auto',
+              horizontal: 'auto ' ,
+              verticalScrollbarSize: 10,
+              horizontalScrollbarSize: 10,
+              scrollBeyondLastLine: false,
+              readOnly: false,
+              automaticLayout:  true,
+              minimap: {
+                  enabled: true
+              },
+              lineHeight:20,
+          });
+          $ ("#CodeBlock").height((editorCodeBlock.getModel() .getLineCount()*40.2)+30);
+
+          function showContainer(containerId) {
+    var containers = document.getElementsByClassName('container');
+
+    // Hide all containers
+    for (var i = 0; i < containers.length; i++) {
+        containers[i].style.display = 'none';
+    }
+
+    // Show the selected container
+    var selectedContainer = document.getElementById(containerId);
+    if (selectedContainer) {
+        selectedContainer.style.display = 'block';
+    }
+}
+
+function showContainer1(containerId) {
+    var containers1 = document.getElementsByClassName('test-case');
+
+    // Hide all containers
+    for (var i = 0; i < containers1.length; i++) {
+        containers1[i].style.display = 'none';
+    }
+
+    // Show the selected container
+    var selectedContainer1 = document.getElementById(containerId);
+    if (selectedContainer1) {
+        selectedContainer1.style.display = 'block';
+    }
+}
+
+  </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script> -->
+    <div class="desktop">
+
+        <div class="question">
+            <div class="heading"> Question 1 Lorem ipsum dolor </div>
+            <h2>Problem</h2>
+            <div class="ques"> L deserunt accusantium repellat earum, labore quibusdam eveniet sequi saepe dignissimos veniam dicta? </div>
+            <h2>Input</h2>
+            <div class="ques"> L deserunt Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe illo odit culpa est voluptates optio laboriosam delectus eos esse atque, iste, pariatur, fuga porro. Optio nam qui necessitatibus, aliquid laborum neque similique rerum, dolore in itaque tempora repellendus ea aliquam obcaecati consequatur aperiam ipsam vel recusandae voluptates voluptas at sunt. At officia accusantium, incidunt exercitationem soluta alias eos fugiat ullam nesciunt delectus debitis distinctio? Pariatur blanditiis at ab error ipsa modi, quisquam doloremque officiis nobis in inventore beatae corporis quasi dignissimos quam dolorem magnam, quidem ipsum nihil amet! Minima libero odio illo, suscipit quisquam fugiat ipsa cumque iure dignissimos commodi. accusantium repellat earum, labore quibusdam eveniet sequi saepe dignissimos veniam dicta?
+                <pre class="err">
+                    <span></span>
+                    <span>2</span>
+                    <span>2 4 </span>
+                </pre>
+            </div>
+            <h2>Output</h2>
+            <div class="ques"> L deserunt accusantium repellat earum, labore quibusdam eveniet sequi saepe dignissimos veniam dicta?
+                <pre class="err">
+                    <span></span>
+                    <span>1</span>
+                </pre>
+            </div>
+        </div>
+        <div class="coding">
+            <div class="language">
+                Select Language
+
+            <select id="codingLanguages">
+                <option value="ruby">Ruby</option>
+                <option value="C++">C++</option>
+                <option value="C">C</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+
+            </select>
+        </div>
+            <div id="editor">
+
+                <pre id='CodeBlock' data-lang='csharp'>
+                  using system;
+                  namespace VSCodeEditor
+                  {
+                      class Program
+                      {
+                          static void Main(string[] args)
+                          {
+                              Console.WriteLine("Hello World!");
+                          }
+                      }
+                  }
+              </pre>
+              </div>
+
+              <button id="submit"> Submit
+              </button>
+
+
+        </div>
+        <div class="test">
+            <div class="radio-inputs">
+                <label class="radio">
+                    <!-- <input type="radio" name="radio" checked="checked" onclick="showContainer('container1')"> -->
+                  <span class="name">Test Cases</span>
+                </label>
+                <!-- <label class="radio">
+                    <input type="radio" name="radio" onclick="showContainer('container2')">
+                  <span class="name">Custom Inputs</span>
+                </label> -->
+
+              </div>
+              <div id="container1" class="container">
+                <!-- Content for Container 1 -->
+                <div class="input" id="testcases">
+                    <button class="value"  checked="checked" onclick="showdata('test1')">
+                      TEST CASE 1
+                    </button>
+                    </div>
+                    <div id="tests" class="test-case">
+                      <div class="text_test_cases">
+                        Compiler message:
+                      </div>
+                      <div class="err" id="output_box">
+                        <span id="compilermessage">
+                          Fuck off
+                          </span>
+                      </div>
+                      <div class="text_test_cases">
+                        STDIN:
+                      </div>
+                      <div class="err" id="output_box2">
+                        <span id="stdin">
+                          wah
+                          </span>
+                      </div>
+                      <div class="text_test_cases">
+                        STDOUT:
+                      </div>
+                      <div class="err" id="output_box3">
+                        <span id="stdout">
+                        helo
+                        </span>
+                      </div>
+
+
+
+
+                    </div>
+
+            </div>
+
+
+
+            <!-- <div id="container2" class="container" >
+                 Content for Container 2
+
+                <div class="custom-input-container">
+                    <textarea name="" id="custom-input" cols="30" rows="6" placeholder="Custom input"></textarea>
+            </div>
+            </div> -->
+        </div>
+
+        <!-- <div class="clash"></div> -->
+    <script>
+      var codeContent = $.trim($('#CodeBlock').text());
+      $('#CodeBlock').html('');
+
+        var editorCodeBlock = monaco.editor.create(document.getElementById('CodeBlock'),{
+              value: codeContent,
+              language : "csharp",
+              theme: "vs-dark",
+              lineNumbers: "on" ,
+              glyphMargin: false,
+              vertical: 'auto',
+              horizontal: 'auto ' ,
+              verticalScrollbarSize: 10,
+              horizontalScrollbarSize: 10,
+              scrollBeyondLastLine: false,
+              readOnly: false,
+              automaticLayout:  true,
+              minimap: {
+                  enabled: true
+              },
+              lineHeight:20,
+          });
+          $ ("#CodeBlock").height((editorCodeBlock.getModel() .getLineCount()*40.2)+30);
+
+          function showContainer(containerId) {
+    var containers = document.getElementsByClassName('container');
+
+    // Hide all containers
+    for (var i = 0; i < containers.length; i++) {
+        containers[i].style.display = 'none';
+    }
+
+    // Show the selected container
+    var selectedContainer = document.getElementById(containerId);
+    if (selectedContainer) {
+        selectedContainer.style.display = 'block';
+    }
+}
+
+function showContainer1(containerId) {
+    var containers1 = document.getElementsByClassName('test-case');
+
+    // Hide all containers
+    for (var i = 0; i < containers1.length; i++) {
+        containers1[i].style.display = 'none';
+    }
+
+    // Show the selected container
+    var selectedContainer1 = document.getElementById(containerId);
+    if (selectedContainer1) {
+        selectedContainer1.style.display = 'block';
+    }
+}
+
+  </script>
+
+</body>
+</html>
+
+
