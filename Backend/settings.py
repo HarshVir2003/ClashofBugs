@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-wx+ov^6utbx7bjg_6)^034um0kb%%xw+sz$)57@l98yziw9l9m'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -70,7 +70,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+            "hosts": [(os.getenv("REDIS_ENDPOINT"), os.getenv("REDIS_PORT"))],
         },
     },
 }
@@ -94,8 +94,8 @@ SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': ['profile', 'email'],
         'APP': {
-            'client_id': '65997679030-vk7358hr91bs47meejtqnp99c4ed17jn.apps.googleusercontent.com',
-            'secret': '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',
+            'client_id': os.getenv("GOOGLE_CLIENT_ID"),
+            'secret': os.getenv("GOOGLE_SECRET_KEY"),
             'key': ''
         }
     },
@@ -163,16 +163,16 @@ LOGGING = {
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default' : dj_database_url.config(default = 'postgres://cob_user:78lfCxSGdfkAQkmBxUZ6DMbq1BNEW8TN@dpg-cnb0p9v109ks739o95qg-a/cob', conn_max_age = 600)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     'default' : dj_database_url.config(default = 'postgres://cob_user:78lfCxSGdfkAQkmBxUZ6DMbq1BNEW8TN@dpg-cnb0p9v109ks739o95qg-a/cob', conn_max_age = 600)
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
