@@ -16,7 +16,7 @@ def dashboard(request, *args, **kwargs):
         "python": python_solved_questions,
         "cpp": cpp_solved_questions,
         "java": java_solved_questions,
-        "c": c_solved_questions
+        "c": c_solved_questions,
         "user":request.user.username
     }
 
