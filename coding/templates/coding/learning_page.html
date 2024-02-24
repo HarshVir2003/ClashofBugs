@@ -32,7 +32,7 @@
     </ul>
 
     <a href="{% url 'dashboard:dashboard' %}">
-        <img src="" alt="hello" class="nav-image">
+        <img src="{% static 'image/user.png' %}" alt="hello" class="nav-image">
               </a>
     <div class="menu-toggle">
     <input id="checkbox" type="checkbox" class="menu-btn">
@@ -46,7 +46,7 @@
     <div class="overlay-menu">
       <div class="profile-image">
           <a href="{% url 'dashboard:dashboard' %}">
-        <img src="" alt="hello">
+        <img src="{% static 'image/user.png' %}" alt="hello">
               </a>
       </div>
       <div class="buttons-menu">
