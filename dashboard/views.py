@@ -17,6 +17,7 @@ def dashboard(request, *args, **kwargs):
         "cpp": cpp_solved_questions,
         "java": java_solved_questions,
         "c": c_solved_questions
+        "user":request.user
     }
 
     return render(request, "dashboard.html", context)
