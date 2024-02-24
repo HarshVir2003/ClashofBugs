@@ -52,7 +52,7 @@ def submission(source_code, language, languages, stdin, stdout):
 
 
 def get_submission(token):
-    url = f"{os.getenv("JUDGE0_URL")}/{token}"
+    url = f"{os.getenv('JUDGE0_URL')}/{token}"
 
     headers = {
         # "X-RapidAPI-Key": "8f8c84ecc2msh3a8ec2a9c3a7585p1b6ab3jsne0cdd4526fbd",
@@ -65,7 +65,7 @@ def get_submission(token):
 
 
 def get_status(token):
-    url = f"{os.getenv("JUDGE0_URL")}/{token}"
+    url = f"{os.getenv('JUDGE0_URL')}/{token}"
 
     header = {
         # "X-RapidAPI-Key": "8f8c84ecc2msh3a8ec2a9c3a7585p1b6ab3jsne0cdd4526fbd",
