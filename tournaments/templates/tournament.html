@@ -201,7 +201,7 @@
                                         <style data-emotion="css 1kvy6vs">
                                             .css-1kvy6vs{border-radius:1.2em;height:100%;}
                                         </style>
-                                        <img src="{{ i.Photo }}" class="chakra-image css-1kvy6vs"/></div>
+                                        <img src="{% static 'image/tournament.jpg' %" class="chakra-image css-1kvy6vs"/></div>
                                     <style data-emotion="css 1vg6q84">.css-1vg6q84{font-weight:700;}</style>
                                     <p class="chakra-text css-1vg6q84">{{i.Title}}</p></div>
                             </div>
@@ -219,7 +219,7 @@
                                 <style data-emotion="css 6dog6x">
                                     .css-6dog6x{height:100%;width:100%;border-radius:1.2em;}
                                 </style>
-                                <img src="" class="chakra-image css-6dog6x" id="imgup"/></div>
+                                <img src="{% static 'image/tournament.jpg' %" class="chakra-image css-6dog6x" id="imgup"/></div>
                             <style data-emotion="css 1lir76r">
                                 .css-1lir76r{-webkit-align-items:start;-webkit-box-align:start;-ms-flex-align:start;align-items:start;padding:20px;width:100%;}
                             </style>
@@ -358,7 +358,7 @@
                                         <style data-emotion="css 1kvy6vs">
                                             .css-1kvy6vs{border-radius:1.2em;height:100%;}
                                         </style>
-                                        <img src="{{ i.Photo }}" class="chakra-image css-1kvy6vs"/></div>
+                                        <img src="{% static 'image/tournament.jpg' %" class="chakra-image css-1kvy6vs"/></div>
                                     <style data-emotion="css 1vg6q84">.css-1vg6q84{font-weight:700;}</style>
                                     <p class="chakra-text css-1vg6q84">{{ i.Title }}</p></div>
                             </div>
@@ -376,7 +376,7 @@
                                 <style data-emotion="css 6dog6x">
                                     .css-6dog6x{height:100%;width:100%;border-radius:1.2em;}
                                 </style>
-                                <img src="" class="chakra-image css-6dog6x" id="imgon"/></div>
+                                <img src="{% static 'image/tournament.jpg' %" class="chakra-image css-6dog6x" id="imgon"/></div>
                             <style data-emotion="css 1lir76r">
                                 .css-1lir76r{-webkit-align-items:start;-webkit-box-align:start;-ms-flex-align:start;align-items:start;padding:20px;width:100%;}
                             </style>
@@ -525,7 +525,7 @@
                                         <style data-emotion="css 1kvy6vs">
                                             .css-1kvy6vs{border-radius:1.2em;height:100%;}
                                         </style>
-                                        <img src="{{ i.Photo }}" class="chakra-image css-1kvy6vs"/></div>
+                                        <img src="{% static 'image/tournament.jpg' %" class="chakra-image css-1kvy6vs"/></div>
                                     <style data-emotion="css 1vg6q84">.css-1vg6q84{font-weight:700;}</style>
                                     <p class="chakra-text css-1vg6q84">{{i.Title}}</p></div>
                             </div>
@@ -543,7 +543,7 @@
                                 <style data-emotion="css 6dog6x">
                                     .css-6dog6x{height:100%;width:100%;border-radius:1.2em;}
                                 </style>
-                                <img src="" class="chakra-image css-6dog6x" id="imgpar" /></div>
+                                <img src="{% static 'image/tournament.jpg' %" class="chakra-image css-6dog6x" id="imgpar" /></div>
                             <style data-emotion="css 1lir76r">
                                 .css-1lir76r{-webkit-align-items:start;-webkit-box-align:start;-ms-flex-align:start;align-items:start;padding:20px;width:100%;}
                             </style>
@@ -678,7 +678,7 @@
     var rew3  = document.getElementById('r3on');
     var desi = document.getElementById('deson');
     var token = document.getElementById('onbutton');
-    var imageele = document.getElementById('imgup');
+
 
     title.innerHTML = i;
     sd.innerHTML = 'Start Date :'+ sdate;
@@ -690,8 +690,7 @@
     rew3.innerHTML = r3
     desi.innerHTML = des
     token.value = id
-    console.log(image)
-    imageele.src = image
+
 
     }
     changedata('{{first_on.Title}}', '{{first_on.StartDate}}','{{first_on.EndDate}}','{{first_on.Description}}','{{first_on.MaxLevel}}' ,'{{first_on.MinLevel}}','{{first_on.Reward1}}', '{{first_on.Reward2}}','{{first_on.Reward3}}', '{{first_on.id}}');
