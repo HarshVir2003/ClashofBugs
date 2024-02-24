@@ -31,11 +31,11 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    "dashboard",
-    "user",
-    "coding",
-    "tournaments",
-    "battle",
+    "dashboard.apps.DashboardConfig",
+    "user.apps.UserConfig",
+    "coding.apps.CodingConfig",
+    "tournaments.apps.TournamentsConfig",
+    "battle.apps.BattleConfig",
     "daphne",
     "channels",
     "crispy_forms",
