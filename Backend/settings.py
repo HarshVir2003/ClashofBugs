@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "tournaments",
     "battle",
     "daphne",
+    "channels",
     "crispy_forms",
     "crispy_bootstrap5",
     'allauth',
