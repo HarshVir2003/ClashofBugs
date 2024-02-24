@@ -14,7 +14,7 @@ from django.views.decorators.csrf import csrf_protect
 class UserSignupPage(FormView):
     template_name = "backend/signup.html"
     form_class = NewUserForm
-    success_url = reverse_lazy("users:home")
+    success_url = reverse_lazy("users:login")
 
     def form_valid(self, form):
         User = get_user_model()
