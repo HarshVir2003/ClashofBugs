@@ -3,14 +3,9 @@
 set -o errexit
 
 pip install -r requirements.txt
-python manage.py collectstatic --no-input
-python manage.py makemigrations
-python manage.py migrate
-
-rm /var/lib/dpkg/lock 
-apt install -y docker-ce docker-ce-cli containerd.io
-docker pull redis
-docker run --rm -p 6379:6379 redis:7
+python3 manage.py collectstatic --no-input
+python3 manage.py makemigrations
+python3 manage.py migrate
 
 wget https://github.com/judge0/judge0/releases/download/v1.13.0/judge0-v1.13.0.zip
 unzip judge0-v1.13.0.zip
